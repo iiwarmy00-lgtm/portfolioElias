@@ -4,10 +4,10 @@ export const Menu = () => {
     return (
         <StyledMenu>
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">works</a></li>
-                <li><a href="">about-me</a></li>
-                <li><a href="">contacts</a></li>
+                <li><a href="">#home</a></li>
+                <li><a href="">#works</a></li>
+                <li><a href="">#about-me</a></li>
+                <li><a href="">#contacts</a></li>
             </ul>
         </StyledMenu>
     );
