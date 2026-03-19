@@ -50,7 +50,7 @@ const SocialList = styled.ul`
 `
 
 const SocialMedia = styled.li`
-
+    list-style: none;
 `
 
 const SocialLink = styled.a`
