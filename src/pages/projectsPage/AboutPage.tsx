@@ -1,37 +1,34 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import aboutImg from "../../../assets/photos/photosecond.png";
-import {Link} from "react-router-dom";
+import {SectionTitle} from "../../components/SectionTitle.tsx";
+import {FlexWrapper} from "../../components/FlexWrapper.tsx";
+import aboutImg from "../../assets/photos/photosecond.png";
 
-export const About = () => {
+export const AboutPage = () => {
     return (
-        <StyledAbout>
-            <SectionTitle>#about-me</SectionTitle>
+        <StyledAboutPage>
+            <SectionTitle>/about-me</SectionTitle>
             <FlexWrapper align={"center"} justify={"space-around"}>
                 <div>
-                    <Text>Hello, i’m Elias!
+                    <TextAboutAuthor>Hello, i’m Elias!
 
                         I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites
                         from scratch and raise them into modern user-friendly web experiences.
 
                         Transforming my creativity and knowledge into a websites has been my passion for over a year. I
                         have been helping various clients to establish their presence online. I always strive to learn
-                        about the newest technologies and frameworks.</Text>
-                    <ReadMoreLink to="/about">Read more</ReadMoreLink>
+                        about the newest technologies and frameworks.</TextAboutAuthor>
                 </div>
                 <Photo src={aboutImg} alt="photo"/>
             </FlexWrapper>
-        </StyledAbout>
+        </StyledAboutPage>
     );
 };
 
-const StyledAbout = styled.section`
-    min-height: 100vh;
-    background-color: #282C33;
+const StyledAboutPage = styled.div`
+
 `
 
-const Text = styled.p`
+const TextAboutAuthor = styled.p`
     text-align: left;
 `
 
@@ -39,8 +36,4 @@ const Photo = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-`
-
-const ReadMoreLink = styled(Link)`
-
 `

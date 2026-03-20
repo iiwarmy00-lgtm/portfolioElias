@@ -7,31 +7,38 @@ export const Footer = () => {
     return (
         <StyledFooter>
             <FlexWrapper align={"flex-start"} justify={"space-between"}>
-                <Logo/>
-                <Text>elias@elias-dev.ml</Text>
-                <Text>Web designer and front-end developer</Text>
+                <FooterLeft>
+                    <FooterLogo>
+                        <Logo/>
+                        <Text>elias@elias-dev.ml</Text>
+                    </FooterLogo>
+                    <Text>Web designer and front-end developer</Text>
+                </FooterLeft>
 
-                <SocialList>
-                    <SocialMedia>
-                        <SocialLink>
-                            <Icon height={"32px"} width={"32px"} viewBox={"0 0 32px 32px"} iconId={"git"}/>
-                        </SocialLink>
-                    </SocialMedia>
+                <FooterRight>
+                    <FooterTitle>Media</FooterTitle>
+                    <SocialList>
+                        <SocialMedia>
+                            <SocialLink href="#">
+                                <Icon height={"32px"} width={"32px"} viewBox={"0 0 32 32"} iconId={"git"}/>
+                            </SocialLink>
+                        </SocialMedia>
 
-                    <SocialMedia>
-                        <SocialLink>
-                            <Icon height={"32px"} width={"32px"} viewBox={"0 0 32px 32px"} iconId={"figma"}/>
-                        </SocialLink>
-                    </SocialMedia>
+                        <SocialMedia>
+                            <SocialLink href="#">
+                                <Icon height={"32px"} width={"32px"} viewBox={"0 0 32 32"} iconId={"figma"}/>
+                            </SocialLink>
+                        </SocialMedia>
 
-                    <SocialMedia>
-                        <SocialLink>
-                            <Icon height={"32px"} width={"32px"} viewBox={"0 0 32px 32px"} iconId={"discord"}/>
-                        </SocialLink>
-                    </SocialMedia>
-                </SocialList>
-                <Copyright>© Copyright 2022. Made by Elias</Copyright>
+                        <SocialMedia>
+                            <SocialLink href="#">
+                                <Icon height={"32px"} width={"32px"} viewBox={"0 0 32 32"} iconId={"discord"}/>
+                            </SocialLink>
+                        </SocialMedia>
+                    </SocialList>
+                </FooterRight>
             </FlexWrapper>
+            <Copyright>© Copyright 2022. Made by Elias</Copyright>
         </StyledFooter>
     );
 };
@@ -41,7 +48,23 @@ const StyledFooter = styled.footer`
     min-height: 20vh;
 `
 
+const FooterLogo = styled.div`
+    display: flex
+`
+
+const FooterLeft = styled.div`
+
+`
+
+const FooterRight = styled.div`
+
+`
+
 const Text = styled.span`
+
+`
+
+const FooterTitle = styled.h3`
 
 `
 
@@ -58,5 +81,6 @@ const SocialLink = styled.a`
 `
 
 const Copyright = styled.small`
-
+    display: block;
+    text-align: center;
 `

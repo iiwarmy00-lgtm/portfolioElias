@@ -1,12 +1,12 @@
 import './App.css'
 import {Header} from "./layout/header/Header.tsx";
-import {Main} from "./layout/sections/main/Main.tsx";
-import {Skills} from "./layout/sections/skills/Skills.tsx";
-import {Projects} from "./layout/sections/projects/Projects.tsx";
-import {About} from "./layout/sections/about/About.tsx";
-import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from "./layout/sections/footer/Footer.tsx";
-import {Quote} from "./layout/sections/quote/Quote.tsx";
+
+
+import {Routes, Route} from 'react-router-dom';
+import {ProjectsPage} from './pages/projectsPage/ProjectsPage.tsx';
+import {HomePage} from "./pages/projectsPage/HomePage.tsx";
+import {AboutPage} from "./pages/projectsPage/AboutPage.tsx";
 
 
 function App() {
@@ -14,13 +14,15 @@ function App() {
     return (
         <div>
             <Header/>
-            <Main/>
-            <Quote/>
-            <Projects/>
-            <Skills/>
-            <About/>
-            <Contacts/>
+
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/projects" element={<ProjectsPage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
+            </Routes>
+
             <Footer/>
+
         </div>
     )
 }
