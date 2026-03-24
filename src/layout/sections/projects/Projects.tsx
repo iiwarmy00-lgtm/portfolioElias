@@ -6,33 +6,41 @@ import projectChertImg from "../../../assets/projects/chertnodes.png";
 import projectImg from "../../../assets/projects/projectx.jpg";
 import projectKahootImg from "../../../assets/projects/kahoot.jpg";
 import {Link} from 'react-router-dom';
+import {Container} from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 
 export const Projects = () => {
     return (
         <StyledProjects>
-            <ProjectsHeader>
-                <SectionTitle>#projects</SectionTitle>
-                <LinkViewAll to="/projects">View all</LinkViewAll>
-            </ProjectsHeader>
+            <Container>
+                <ProjectsHeader>
+                    <TitleWrapper>
+                        <SectionTitle><span>#</span>projects</SectionTitle>
+                        <Line/>
+                    </TitleWrapper>
 
-            <FlexWrapper justify="space-between">
+                    <LinkViewAll to="/projects">View all ~~&gt;</LinkViewAll>
+                </ProjectsHeader>
 
-                <Project src={projectChertImg} text={"HTML SCSS Python Flask"} title={"ChertNodes"}
-                         description={"Minecraft servers hosting"}/>
-                <Project src={projectImg} text={"React Express Discord.js Node.js HTML SCSS Python Flask"}
-                         title={"ProtectX"} description={"Discord anti-crash bot"}/>
-                <Project src={projectKahootImg} text={"CSS Express Node.js"} title={"Kahoot Answers Viewer"}
-                         description={"Get answers to your kahoot quiz"}/>
+                <FlexWrapper justify="space-between" gap="15px">
 
-            </FlexWrapper>
+                    <Project src={projectChertImg} text={"HTML SCSS Python Flask"} title={"ChertNodes"}
+                             description={"Minecraft servers hosting"}/>
+                    <Project src={projectImg} text={"React Express Discord.js Node.js HTML SCSS Python Flask"}
+                             title={"ProtectX"} description={"Discord anti-crash bot"}/>
+                    <Project src={projectKahootImg} text={"CSS Express Node.js"} title={"Kahoot Answers Viewer"}
+                             description={"Get answers to your kahoot quiz"}/>
+
+                </FlexWrapper>
+            </Container>
         </StyledProjects>
     );
 };
 
 const StyledProjects = styled.section`
     min-height: 100vh;
-    background-color: #282C33;
+    padding: 80px;
 `
 
 const LinkViewAll = styled(Link)`
@@ -40,5 +48,21 @@ const LinkViewAll = styled(Link)`
 `
 
 const ProjectsHeader = styled.div`
-    display: flex
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+`
+
+const TitleWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 16px;
+`
+
+const Line = styled.span`
+    display: inline-block;
+    width: 511px;
+    height: 1px;
+    background-color: ${theme.colors.accent};
 `

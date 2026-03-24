@@ -2,15 +2,21 @@ import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {LanguageSwitcher} from "../../components/languageSwitcher/LanguageSwitcher.tsx";
+import {FlexWrapper} from "../../components/FlexWrapper.tsx";
+import {Container} from "../../components/Container.ts";
 
 export const Header = () => {
     return (
         <StyledHeader>
-            <Logo/>
-            <RightSide>
-                <Menu/>
-                <LanguageSwitcher/>
-            </RightSide>
+            <Container>
+                <FlexWrapper justify={"space-between"} align={"center"}>
+                    <Logo/>
+                    <RightBlock>
+                        <Menu/>
+                        <LanguageSwitcher/>
+                    </RightBlock>
+                </FlexWrapper>
+            </Container>
         </StyledHeader>
     );
 };
@@ -18,13 +24,16 @@ export const Header = () => {
 const StyledHeader = styled.header`
     background-color: #282C33;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    padding: 32px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
 `
 
-const RightSide = styled.div`
+const RightBlock = styled.div`
     display: flex;
-    align-items: center;
-    gap: 40px;
+    gap: 20px;
 `
+
