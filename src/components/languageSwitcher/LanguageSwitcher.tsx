@@ -1,7 +1,13 @@
+import styled from "styled-components";
+
 export const LanguageSwitcher = () => {
     return (
-        <div>
+        <StyledLanguageSwitcher>
             <span>RU</span>
-        </div>
+        </StyledLanguageSwitcher>
     )
 }
+
+const StyledLanguageSwitcher = styled.div`
+
+`

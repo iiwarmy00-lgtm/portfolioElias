@@ -36,12 +36,16 @@ export const Project = (props: ProjectPropsType) => {
 
 export const SmallProject = (props: SmallProjectPropsType) => {
     return (
-        <SmallProjectPropsType>
-            <Text>{props.text}</Text>
-            <Title>{props.title}</Title>
-            <Text>{props.description}</Text>
-            <Link href={" "}>Live</Link>
-        </SmallProjectPropsType>
+        <StyledSmallProject>
+            <TechText>{props.text}</TechText>
+
+            <Content>
+                <Title>{props.title}</Title>
+                <Description>{props.description}</Description>
+                <ProjectLink href="#">Live &lt;~&gt;</ProjectLink>
+            </Content>
+
+        </StyledSmallProject>
     );
 };
 
@@ -58,14 +62,16 @@ const Content = styled.div`
     padding: 16px;
     display: flex;
     flex-direction: column;
+    flex: 1;
     align-items: flex-start;
-    flex-grow: 1;
 `
 
-const SmallProjectPropsType = styled.div`
-    background-color: #282C33;
-    max-width: 32%;
+const StyledSmallProject = styled.div`
     max-height: 391px;
+    border: 1px solid ${theme.colors.font};
+    background-color: ${theme.colors.primaryBg};
+    display: flex;
+    flex-direction: column;
 `
 
 const ButtonsWrapper = styled.div`
@@ -105,14 +111,40 @@ const Text = styled.p`
 `
 
 const Description = styled.p`
+    margin: 0 0 16px;
     font-size: 16px;
     color: ${theme.colors.font};
-    margin: 0 0 16px;
+    line-height: 1.4;
 `
 
 const Title = styled.h3`
+    margin: 0 0 16px;
     font-size: 24px;
     font-weight: 500;
     color: ${theme.colors.text};
-    margin: 0 0 12px;
+`
+
+const TechText = styled.p`
+    margin: 0;
+    padding: 8px;
+    font-size: 14px;
+    color: ${theme.colors.font};
+    border-bottom: 1px solid ${theme.colors.font};
+`
+
+const ProjectLink = styled.a`
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 1px solid ${theme.colors.accent};
+    color: ${theme.colors.text};
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: ${theme.colors.accent};
+        color: ${theme.colors.primaryBg};
+    }
 `

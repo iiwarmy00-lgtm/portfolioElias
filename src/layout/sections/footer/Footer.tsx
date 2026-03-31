@@ -12,9 +12,8 @@ export const Footer = () => {
                     <FooterLeft>
                         <FooterLogoRow>
                             <Logo/>
-                            <MailText>elias@elias-dev.ml</MailText>
+                            <Link href="">elias@elias-dev.ml</Link>
                         </FooterLogoRow>
-
                         <RoleText>Web designer and front-end developer</RoleText>
                     </FooterLeft>
 
@@ -81,11 +80,6 @@ const FooterRight = styled.div`
     align-items: flex-start;
 `
 
-const MailText = styled.span`
-    color: ${theme.colors.font};
-    font-size: 16px;
-`
-
 const RoleText = styled.p`
     margin: 0;
     color: ${theme.colors.text};
@@ -127,4 +121,9 @@ const Copyright = styled.small`
     text-align: center;
     color: ${theme.colors.font};
     font-size: 14px;
+`
+
+const Link = styled.a`
+    color: ${theme.colors.font};
+    font-size: 16px;
 `

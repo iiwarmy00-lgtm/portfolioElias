@@ -3,8 +3,8 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Skill} from "./skill/Skill.tsx";
 import {theme} from "../../../styles/Theme.ts";
 import {Container} from "../../../components/Container.ts";
-import {Dots} from "../../../styles/Global.styled.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
+
 
 export const Skills = () => {
     return (
@@ -12,18 +12,13 @@ export const Skills = () => {
             <Container>
                 <SectionHeader>
                     <SectionTitle><span>#</span>skills</SectionTitle>
-                    <Line/>
                 </SectionHeader>
 
-                <SkillsContent>
-                    <DecorBlock>
-                        <Dots/>
-                        <PurpleLogo>
-                            <Icon iconId={'purpleLogo'}/>
-                        </PurpleLogo>
-                    </DecorBlock>
-
                     <SkillsGrid>
+                        <IconGroup>
+                            <Icon height={"285px"} width={"350px"} viewBox={"0 0 350 285"} iconId={'iconsGroup'}/>
+                        </IconGroup>
+
                         <LanguagesSkill
                             title={"Languages"}
                             description={"TypeScript Lua " +
@@ -52,49 +47,47 @@ export const Skills = () => {
                                 "Flask Express.js"}
                         />
                     </SkillsGrid>
-                </SkillsContent>
             </Container>
         </StyledSkills>
     );
 };
 
 const StyledSkills = styled.section`
-    padding: 30px 0 150px;
+    padding: 60px 0 60px;
+`
+
+const IconGroup = styled.div`
+    position: absolute;
+    z-index: 0;
 `
 
 const SectionHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 16px;
-`
-
-const SkillsContent = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 542px;
-    gap: 40px;
-    align-items: start;
-`
-
-const DecorBlock = styled.div`
     position: relative;
-    min-height: 260px;
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 239px;
+        height: 1px;
+        background-color: ${theme.colors.accent};
+    }
 `
 
 const SkillsGrid = styled.div`
+    
+    position: relative;
     display: grid;
-    grid-template-columns: 180px 190px 200px;
+    grid-template-columns: 190px 190px 190px;
     grid-template-areas:
         "languages databases tools"
         ". other frameworks";
     gap: 16px;
     margin-top: 40px;
-`
-
-const Line = styled.span`
-    display: inline-block;
-    width: 239px;
-    height: 1px;
-    background-color: ${theme.colors.accent};
+    justify-content: end;
+    align-items: start;
 `
 
 const LanguagesSkill = styled(Skill)`
@@ -111,21 +104,9 @@ const ToolsSkill = styled(Skill)`
 
 const OtherSkill = styled(Skill)`
     grid-area: other;
+    
 `
 
 const FrameworksSkill = styled(Skill)`
     grid-area: frameworks;
-`
-
-const PurpleLogo = styled.div`
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    z-index: 0;
-
-    svg {
-        width: 160px;
-        height: 160px;
-        fill: ${theme.colors.accent};
-    }
 `

@@ -5,7 +5,8 @@ import {Link} from "react-router-dom";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
-import {Dots} from "../../../styles/Global.styled.ts";
+import {TypingText} from "../../../components/TypingText.tsx";
+
 
 export const Main = () => {
     return (
@@ -15,7 +16,9 @@ export const Main = () => {
 
                     <Introduction>
                         <MainTitle>Elias is a <span>web designer</span> and <span>front-end developer</span></MainTitle>
-                        <TextAboutAuthor>He crafts responsive websites where technologies meet creativity</TextAboutAuthor>
+                        <TextAboutAuthor>
+                            <TypingText text="He crafts responsive websites where technologies meet
+                            creativity"/></TextAboutAuthor>
                         <ReadMoreLink to="/contacts">Contact me!!</ReadMoreLink>
                     </Introduction>
 
@@ -24,7 +27,10 @@ export const Main = () => {
                             <PurpleLogo>
                                 <Icon iconId={'purpleLogo'}/>
                             </PurpleLogo>
-                            <Dots/>
+                            <Dots>
+                                <Icon height={"85px"} width={"85px"} viewBox={"0 0 85 85"} iconId={'dots'}/>
+                            </Dots>
+
                             <Photo src={photo} alt=""/>
                         </PhotoWrapper>
 
@@ -41,9 +47,9 @@ export const Main = () => {
 }
 
 const StyledMain = styled.section`
-    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 100px 0 100px;
 `
 
 const Photo = styled.img`
@@ -56,6 +62,7 @@ const Photo = styled.img`
     height: auto;
     object-fit: cover;
     display: block;
+    z-index: 3;
 `
 
 const PhotoWrapper = styled.div`
@@ -134,18 +141,18 @@ const ReadMoreLink = styled(Link)`
     }
 `
 
-const TextAboutAuthor = styled.p`
+const TextAboutAuthor = styled.div`
     font-weight: 400;
     font-size: 16px;
-    color: ${theme.colors.font};
     line-height: 1.6;
     margin: 0 0 24px;
+    min-height: 80px;
 `
 
 const Introduction = styled.div`
     max-width: 537px;
     max-height: 227px;
-    top: 197px;
+    top: 200px;
     left: 171px;
     text-align: left;
 `
@@ -162,3 +169,11 @@ const PurpleLogo = styled.div`
         fill: ${theme.colors.accent};
     }
 `
+
+const Dots = styled.div`
+    position: absolute;
+    top: 320px;
+    right: 60px;
+    z-index: 6;
+`
+

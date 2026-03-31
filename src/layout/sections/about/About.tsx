@@ -4,6 +4,7 @@ import aboutImg from "../../../assets/photos/photosecond.png";
 import {Link} from "react-router-dom";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
+import {Icon} from "../../../components/icon/Icon.tsx";
 
 export const About = () => {
     return (
@@ -11,8 +12,20 @@ export const About = () => {
             <Container>
                 <AboutHeader>
                     <SectionTitle><span>#</span>about-me</SectionTitle>
-                    <Line/>
                 </AboutHeader>
+
+                <IconRect>
+                    <Icon height={"155px"} width={"155px"} viewBox={"0 0 155 155"} iconId="rectangle"/>
+                </IconRect>
+                <Dots>
+                    <Icon height={"85px"} width={"85px"} viewBox={"0 0 85 85"} iconId={'dots'}/>
+                </Dots>
+                {/*<DotsRight>*/}
+                {/*    <Icon height={"105px"} width={"105px"} viewBox={"0 0 105 105"} iconId={'dots'}/>*/}
+                {/*</DotsRight>*/}
+                {/*<DotsLeft>*/}
+                {/*    <Icon height={"60px"} width={"105px"} viewBox={"0 0 105 60"} iconId={'dots'}/>*/}
+                {/*</DotsLeft>*/}
 
                 <AboutContent>
                     <Information>
@@ -28,6 +41,7 @@ export const About = () => {
                         <ReadMoreLink to="/about">Read more -&gt;</ReadMoreLink>
                     </Information>
                     <PhotoWrapper>
+
                         <Photo src={aboutImg} alt="photo"/>
                     </PhotoWrapper>
                 </AboutContent>
@@ -37,7 +51,7 @@ export const About = () => {
 };
 
 const StyledAbout = styled.section`
-    padding: 80px 0 100px;
+    padding: 60px 0 60px;
 `
 
 const Text = styled.p`
@@ -52,6 +66,7 @@ const Photo = styled.img`
     width: 100%;
     height: auto;
     object-fit: contain;
+    z-index: 1;
 `
 
 const Information = styled.div`
@@ -75,25 +90,27 @@ const ReadMoreLink = styled(Link)`
     }
 `
 
-const Line = styled.span`
-    display: inline-block;
-    width: 326px;
-    height: 1px;
-    background-color: ${theme.colors.accent};
-`
-
 const AboutHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 32px;
+    position: relative;
+    margin-bottom: 45px;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 326px;
+        height: 1px;
+        background-color: ${theme.colors.accent};
+    }
+
 `
 
 const AboutContent = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 420px;
+    display: flex;
     gap: 10px;
-    align-items: start;
+    justify-content: space-between;
 `
 
 const PhotoWrapper = styled.div`
@@ -113,3 +130,33 @@ const PhotoWrapper = styled.div`
         background-color: ${theme.colors.accent};
     }
 `
+
+const IconRect = styled.div`
+    position: absolute;
+    left: -90px;
+    z-index: 1;
+`
+
+const Dots = styled.div`
+    position: relative;
+    top: 80px;
+    right: -770px;
+    z-index: 6;
+    width: 85px;
+`
+
+// const DotsRight = styled.div`
+//     position: absolute;
+//     right: 100px;
+//     z-index: 6;
+//     width: 105px;
+//     //bottom: 0;
+// `
+
+// const DotsLeft = styled.div`
+//     position: relative;
+//     top: 320px;
+//     right: -950px;
+//     z-index: 8;
+//     width: 120px;
+// `

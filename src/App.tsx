@@ -8,6 +8,7 @@ import {ProjectsPage} from './pages/projectsPage/ProjectsPage.tsx';
 import {HomePage} from "./pages/homePage/HomePage.tsx";
 import {AboutPage} from "./pages/aboutPage/AboutPage.tsx";
 import {ContactPage} from "./pages/contactPage/ContactPage.tsx";
+import {SocialBar} from "./components/SocialBar.tsx";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     return (
         <div>
             <Header/>
+            <SocialBar/>
 
             <Routes>
                 <Route path="/" element={<HomePage/>}/>

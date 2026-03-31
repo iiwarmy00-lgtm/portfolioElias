@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
+import {Icon} from "../../../components/icon/Icon.tsx";
 
 export const Quote = () => {
     return (
         <StyledQuote>
             <Container>
+                <IconRect>
+                    <Icon height={"90px"} width={"90px"} viewBox={"0 0 90 90"} iconId="rectangle"/>
+                </IconRect>
                 <QuoteWrapper>
+
+
                     <QuoteTextBlock>
                         <QuoteMarkLeft>"</QuoteMarkLeft>
                         <QuoteText>With great power comes great electricity bill</QuoteText>
@@ -23,7 +29,14 @@ export const Quote = () => {
 };
 
 const StyledQuote = styled.section`
-    padding: 32px 0 80px;
+    padding: 40px 0 40px;
+`
+
+const IconRect = styled.div`
+    position: absolute;
+    right: -10px;
+    z-index: 1;
+    
 `
 
 const QuoteWrapper = styled.div`
