@@ -19,6 +19,10 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
     border: 1px solid ${theme.colors.font};
     background-color: transparent;
+
+    @media ${theme.media.mobile} {
+        max-width: 320px;
+    }
 `
 
 const SkillTitle = styled.h3`
@@ -28,6 +32,10 @@ const SkillTitle = styled.h3`
     font-weight: 600;
     color: ${theme.colors.text};
     border-bottom: 1px solid ${theme.colors.font};
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+    }
 `
 
 const SkillText = styled.div`
@@ -38,4 +46,9 @@ const SkillText = styled.div`
     color: ${theme.colors.font};
     white-space: pre-line;
     line-height: 1.3;
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+        line-height: 1.4;
+    }
 `

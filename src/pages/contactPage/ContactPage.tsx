@@ -76,17 +76,31 @@ export const ContactPage = () => {
 const StyledContactPage = styled.div`
     min-height: 79vh;
     background-color: ${theme.colors.primaryBg};
-    padding: 100px 0 0;
+    padding: 120px 0 0;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
 `
 
 const ContactsPart = styled.div`
     margin-bottom: 80px;
+
+    @media ${theme.media.mobile} {
+        margin-bottom: 48px;
+    }
 `
 
 const PageSubtitle = styled.p`
     margin: 8px 0 0;
     color: ${theme.colors.font};
     font-size: 16px;
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+    }
 `
 
 const ContactsContent = styled.div`
@@ -95,6 +109,12 @@ const ContactsContent = styled.div`
     gap: 60px;
     align-items: start;
     margin-top: 80px;
+
+    @media ${theme.media.mobile} {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 32px;
+    }
 `
 
 const ContactsText = styled.p`
@@ -102,30 +122,56 @@ const ContactsText = styled.p`
     margin: 0;
     color: ${theme.colors.font};
     line-height: 1.6;
+
+    @media ${theme.media.mobile} {
+        max-width: 100%;
+        width: 100%;
+        font-size: 16px;
+    }
 `
 
 const CardsWrapper = styled.div`
     display: flex;
     gap: 16px;
     align-items: flex-start;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
 `
 
 const SupportCard = styled.div`
     width: 250px;
     border: 1px solid ${theme.colors.font};
     padding: 16px;
+    
+    @media ${theme.media.mobile} {
+        width: 100%;
+        max-width: 320px;
+    }
 `
 
 const MessageCard = styled.div`
     width: 190px;
     border: 1px solid ${theme.colors.font};
     padding: 16px;
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+        max-width: 320px;
+    }
 `
 
 const CardTitle = styled.p`
     margin: 0 0 16px;
     color: ${theme.colors.text};
     font-weight: 600;
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+    }
 `
 
 const ContactItem = styled.div`
@@ -143,6 +189,10 @@ const ContactItem = styled.div`
     &:not(:last-child) {
         margin-bottom: 12px;
     }
+
+    @media ${theme.media.mobile} {
+        column-gap: 8px;
+    }
 `
 
 const ContactValue = styled.span`
@@ -150,6 +200,10 @@ const ContactValue = styled.span`
     font-size: 14px;
     line-height: 1.4;
     word-break: break-all;
+
+    @media ${theme.media.mobile} {
+        font-size: 13px;
+    }
 `
 
 const ContactLink = styled.a`
@@ -158,10 +212,17 @@ const ContactLink = styled.a`
     font-size: 14px;
     line-height: 1.4;
     word-break: break-word;
+    
+    
 `
 
 const AllMediaPart = styled.div`
     margin-top: 20px;
+
+    @media ${theme.media.mobile} {
+        margin-top: 0;
+        padding: 0 0 100px;
+    }
 `
 
 const MediaList = styled.div`

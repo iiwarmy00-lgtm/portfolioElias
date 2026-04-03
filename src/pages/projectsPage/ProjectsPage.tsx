@@ -67,10 +67,19 @@ const StyledProjectsPage = styled.div`
     min-height: 100vh;
     background-color: ${theme.colors.primaryBg};
     padding: 100px 0 80px;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0 60px;
+    }
 `
 
 const ProjectsPageTitle = styled.div`
     margin-bottom: 68px;
+
+    @media ${theme.media.mobile} {
+        margin-bottom: 40px;
+        padding: 100px 0 0;
+    }
 `
 
 const CompleteApp = styled.div`
@@ -78,6 +87,12 @@ const CompleteApp = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 80px;
+
+    @media ${theme.media.mobile} {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-bottom: 48px;
+    }
 `
 
 const SmallProjects = styled.div`
@@ -85,12 +100,23 @@ const SmallProjects = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     align-items: stretch;
+
+    @media ${theme.media.mobile} {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-bottom: 48px;
+    }
 `
 
 const SectionText = styled.p`
     margin: 14px 0 0;
     color: ${theme.colors.text};
     font-size: 16px;
+
+    @media ${theme.media.mobile} {
+        margin-top: 8px;
+        font-size: 14px;
+    }
 `
 
 const NameGroupProjects = styled.h3`
@@ -101,6 +127,11 @@ const NameGroupProjects = styled.h3`
     
     span {
         color: ${theme.colors.accent};
+    }
+
+    @media ${theme.media.mobile} {
+        margin-top: 8px;
+        font-size: 20px;
     }
 `
 

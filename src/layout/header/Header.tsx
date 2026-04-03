@@ -4,6 +4,7 @@ import {Menu} from "../../components/menu/Menu.tsx";
 import {LanguageSwitcher} from "../../components/languageSwitcher/LanguageSwitcher.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 import {Container} from "../../components/Container.ts";
+import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
 
 export const Header = () => {
     return (
@@ -12,6 +13,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <RightBlock>
+                        <MobileMenu/>
                         <Menu/>
                         <LanguageSwitcher/>
                     </RightBlock>
@@ -30,6 +32,7 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
+    
 `
 
 const RightBlock = styled.div`

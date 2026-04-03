@@ -65,24 +65,43 @@ const StyledAboutPage = styled.div`
     min-height: 100vh;
     background-color: ${theme.colors.primaryBg};
     padding: 100px 0 80px;
+
+    @media ${theme.media.mobile} {
+        padding: 120px 0 100px;
+    }
 `
 
 const AboutContent = styled.div`
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
 `
 
 const Photo = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media ${theme.media.mobile} {
+        height: auto;
+    }
 `
 
 const Information = styled.div`
     max-width: 520px;
     margin-top: 150px;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
 `
 
 const MyFunFacts = styled.div`
@@ -107,6 +126,11 @@ const Text = styled.p`
     margin: 0 0 20px;
     color: ${theme.colors.font};
     line-height: 1.6;
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
 `
 
 const PhotoWrapper = styled.div`
@@ -125,6 +149,10 @@ const PhotoWrapper = styled.div`
         height: 1px;
         background-color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const FunFactsGrid = styled.div`
@@ -139,6 +167,10 @@ const SecondaryTitle = styled.p`
     margin: 8px 0 0;
     color: ${theme.colors.font};
     font-size: 16px;
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+    }
 `
 
 const Dots = styled.div`
@@ -148,6 +180,10 @@ const Dots = styled.div`
     z-index: 6;
     width: 85px;
     height: 85px;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 const PurpleLogo = styled.div`
     position: absolute;
@@ -158,5 +194,9 @@ const PurpleLogo = styled.div`
     svg {
         width: 200px;
         height: 200px;
+    }
+
+    @media ${theme.media.mobile} {
+        display: none;
     }
 `

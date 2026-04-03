@@ -20,6 +20,7 @@ export const About = () => {
                 <Dots>
                     <Icon height={"85px"} width={"85px"} viewBox={"0 0 85 85"} iconId={'dots'}/>
                 </Dots>
+
                 {/*<DotsRight>*/}
                 {/*    <Icon height={"105px"} width={"105px"} viewBox={"0 0 105 105"} iconId={'dots'}/>*/}
                 {/*</DotsRight>*/}
@@ -52,6 +53,10 @@ export const About = () => {
 
 const StyledAbout = styled.section`
     padding: 60px 0 60px;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0;
+    }
 `
 
 const Text = styled.p`
@@ -59,6 +64,11 @@ const Text = styled.p`
     text-align: left;
     color: ${theme.colors.font};
     line-height: 1.6;
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+        margin: 0 0 16px;
+    }
 `
 
 const Photo = styled.img`
@@ -67,10 +77,19 @@ const Photo = styled.img`
     height: auto;
     object-fit: contain;
     z-index: 1;
+
+    @media ${theme.media.mobile} {
+        max-width: 100%;
+    }
 `
 
 const Information = styled.div`
     max-width: 520px;
+
+    @media ${theme.media.mobile} {
+        max-width: 100%;
+        width: 100%;
+    }
 `
 
 const ReadMoreLink = styled(Link)`
@@ -87,6 +106,10 @@ const ReadMoreLink = styled(Link)`
     &:hover {
         background-color: ${theme.colors.accent};
         color: ${theme.colors.primaryBg};
+    }
+
+    @media ${theme.media.mobile} {
+        margin-top: 8px;
     }
 `
 
@@ -105,12 +128,26 @@ const AboutHeader = styled.div`
         background-color: ${theme.colors.accent};
     }
 
+    @media ${theme.media.mobile} {
+        margin-bottom: 24px;
+
+        &::after {
+            width: 120px;
+        }
+    }
+
 `
 
 const AboutContent = styled.div`
     display: flex;
     gap: 10px;
     justify-content: space-between;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
 `
 
 const PhotoWrapper = styled.div`
@@ -129,12 +166,19 @@ const PhotoWrapper = styled.div`
         height: 1px;
         background-color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.mobile} {
+        display: none;
 `
 
 const IconRect = styled.div`
     position: absolute;
     left: -90px;
     z-index: 1;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const Dots = styled.div`
@@ -143,6 +187,10 @@ const Dots = styled.div`
     right: -770px;
     z-index: 6;
     width: 85px;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 // const DotsRight = styled.div`

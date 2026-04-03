@@ -19,33 +19,35 @@ export const Skills = () => {
                             <Icon height={"285px"} width={"350px"} viewBox={"0 0 350 285"} iconId={'iconsGroup'}/>
                         </IconGroup>
 
-                        <LanguagesSkill
-                            title={"Languages"}
-                            description={"TypeScript Lua " +
-                                "Python JavaScript"}
-                        />
-                        <DatabasesSkill
-                            title={"Databases"}
-                            description={"SQLite PostgreSQL " +
-                                "Mongo"}
-                        />
-                        <ToolsSkill
-                            title={"Tools"}
-                            description={"VSCode Neovim Linux " +
-                                "Figma XFCE Arch " +
-                                "Git Font Awesome"}
-                        />
-                        <OtherSkill
-                            title={"Other"}
-                            description={"HTML CSS EJS SCSS " +
-                                "REST Jinja"}
-                        />
-                        <FrameworksSkill
-                            title={"Frameworks"}
-                            description={"React Vue " +
-                                "Disnake Discord.js " +
-                                "Flask Express.js"}
-                        />
+                        <div>
+                            <LanguagesSkill
+                                title={"Languages"}
+                                description={"TypeScript Lua " +
+                                    "Python JavaScript"}
+                            />
+                            <DatabasesSkill
+                                title={"Databases"}
+                                description={"SQLite PostgreSQL " +
+                                    "Mongo"}
+                            />
+                            <ToolsSkill
+                                title={"Tools"}
+                                description={"VSCode Neovim Linux " +
+                                    "Figma XFCE Arch " +
+                                    "Git Font Awesome"}
+                            />
+                            <OtherSkill
+                                title={"Other"}
+                                description={"HTML CSS EJS SCSS " +
+                                    "REST Jinja"}
+                            />
+                            <FrameworksSkill
+                                title={"Frameworks"}
+                                description={"React Vue " +
+                                    "Disnake Discord.js " +
+                                    "Flask Express.js"}
+                            />
+                        </div>
                     </SkillsGrid>
             </Container>
         </StyledSkills>
@@ -54,11 +56,19 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
     padding: 60px 0 60px;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0;
+    }
 `
 
 const IconGroup = styled.div`
     position: absolute;
     z-index: 0;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const SectionHeader = styled.div`
@@ -74,10 +84,15 @@ const SectionHeader = styled.div`
         height: 1px;
         background-color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.mobile} {
+        &::after {
+            width: 120px;
+        }
+    }
 `
 
 const SkillsGrid = styled.div`
-    
     position: relative;
     display: grid;
     grid-template-columns: 190px 190px 190px;
@@ -88,6 +103,19 @@ const SkillsGrid = styled.div`
     margin-top: 40px;
     justify-content: end;
     align-items: start;
+
+    @media ${theme.media.mobile} {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "languages"
+            "databases"
+            "tools"
+            "other"
+            "frameworks";
+        justify-content: center;
+        justify-items: center;
+        margin-top: 24px;
+    }
 `
 
 const LanguagesSkill = styled(Skill)`

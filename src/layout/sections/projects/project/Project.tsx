@@ -56,6 +56,11 @@ const StyledProject = styled.div`
     flex-direction: column;
     height: 100%;
     width: 100%;
+
+    @media ${theme.media.mobile} {
+        max-width: 320px;
+        margin: 0 auto;
+    }
 `
 
 const Content = styled.div`
@@ -64,6 +69,11 @@ const Content = styled.div`
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
+
+    @media ${theme.media.mobile} {
+        padding: 12px;
+        gap: 12px;
+    }
 `
 
 const StyledSmallProject = styled.div`
@@ -72,12 +82,21 @@ const StyledSmallProject = styled.div`
     background-color: ${theme.colors.primaryBg};
     display: flex;
     flex-direction: column;
+
+    @media ${theme.media.mobile} {
+        max-width: 320px;
+        width: 100%;
+    }
 `
 
 const ButtonsWrapper = styled.div`
     display: flex;
     gap: 16px;
     margin-top: auto;
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+    }
 `
 
 const Image = styled.img`
@@ -86,6 +105,10 @@ const Image = styled.img`
     object-fit: cover;
     display: block;
     border-bottom: 1px solid ${theme.colors.font};
+
+    @media ${theme.media.mobile} {
+        height: 160px;
+    }
 `
 
 const Link = styled.a`
@@ -101,6 +124,17 @@ const Link = styled.a`
         background-color: ${theme.colors.accent};
         color: ${theme.colors.primaryBg};
     }
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+        font-size: 14px;
+
+        &:hover {
+            background-color: ${theme.colors.accent};
+            color: ${theme.colors.primaryBg};
+        }
+    }
+    
 `
 
 const Text = styled.p`
@@ -108,6 +142,10 @@ const Text = styled.p`
     font-size: 14px;
     color: ${theme.colors.text};
     border-bottom: 1px solid ${theme.colors.text};
+
+    @media ${theme.media.mobile} {
+        font-size: 12px;
+    }
 `
 
 const Description = styled.p`
@@ -115,6 +153,11 @@ const Description = styled.p`
     font-size: 16px;
     color: ${theme.colors.font};
     line-height: 1.4;
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
 `
 
 const Title = styled.h3`
@@ -122,6 +165,11 @@ const Title = styled.h3`
     font-size: 24px;
     font-weight: 500;
     color: ${theme.colors.text};
+
+    @media ${theme.media.mobile} {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
 `
 
 const TechText = styled.p`
@@ -130,6 +178,10 @@ const TechText = styled.p`
     font-size: 14px;
     color: ${theme.colors.font};
     border-bottom: 1px solid ${theme.colors.font};
+
+    @media ${theme.media.mobile} {
+        font-size: 12px;
+    }
 `
 
 const ProjectLink = styled.a`
@@ -147,4 +199,15 @@ const ProjectLink = styled.a`
         background-color: ${theme.colors.accent};
         color: ${theme.colors.primaryBg};
     }
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+        font-size: 14px;
+
+        &:hover {
+            background-color: ${theme.colors.accent};
+            color: ${theme.colors.primaryBg};
+        }
+    }
+    
 `

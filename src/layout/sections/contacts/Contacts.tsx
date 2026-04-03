@@ -43,12 +43,21 @@ export const Contacts = () => {
 
 const StyledContacts = styled.section`
     padding: 60px 0 60px;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0;
+    }
 `
 
 const ContactCard = styled.div`
     width: 205px;
     border: 1px solid ${theme.colors.font};
     padding: 14px;
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+        max-width: 320px;
+    }
 `
 
 const ContactsHeader = styled.div`
@@ -65,6 +74,13 @@ const ContactsHeader = styled.div`
         height: 1px;
         background-color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.mobile} {
+        margin-bottom: 24px;
+
+        &::after {
+            width: 90px;
+        }
 `
 
 const ContactsContent = styled.div`
@@ -72,6 +88,12 @@ const ContactsContent = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
 `
 
 const Link = styled.a`
@@ -91,6 +113,10 @@ const Link = styled.a`
     &:not(:last-child) {
         margin-bottom: 10px;
     }
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+    }
 `
 
 const ContactsText = styled.p`
@@ -98,16 +124,30 @@ const ContactsText = styled.p`
     margin: 0;
     color: ${theme.colors.font};
     line-height: 1.6;
+
+    @media ${theme.media.mobile} {
+        max-width: 100%;
+        width: 100%;
+        font-size: 16px;
+    }
 `
 
 const CardTitle = styled.h3`
     margin: 0 0 16px;
     color: ${theme.colors.text};
     font-weight: 600;
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+    }
 `
 
 const Dots = styled.div`
     position: absolute;
     left: -10px;
     z-index: 6;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `

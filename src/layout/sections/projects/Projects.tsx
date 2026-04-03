@@ -28,17 +28,19 @@ export const Projects = () => {
                 </IconRect>
 
 
+                <ProjectsContent>
+                    <FlexWrapper justify="space-between" gap="15px">
 
-                <FlexWrapper justify="space-between" gap="15px">
+                        <Project src={projectChertImg} text={"HTML SCSS Python Flask"} title={"ChertNodes"}
+                                 description={"Minecraft servers hosting"}/>
+                        <Project src={projectImg} text={"React Express Discord.js Node.js HTML SCSS Python Flask"}
+                                 title={"ProtectX"} description={"Discord anti-crash bot"}/>
+                        <Project src={projectKahootImg} text={"CSS Express Node.js"} title={"Kahoot Answers Viewer"}
+                                 description={"Get answers to your kahoot quiz"}/>
 
-                    <Project src={projectChertImg} text={"HTML SCSS Python Flask"} title={"ChertNodes"}
-                             description={"Minecraft servers hosting"}/>
-                    <Project src={projectImg} text={"React Express Discord.js Node.js HTML SCSS Python Flask"}
-                             title={"ProtectX"} description={"Discord anti-crash bot"}/>
-                    <Project src={projectKahootImg} text={"CSS Express Node.js"} title={"Kahoot Answers Viewer"}
-                             description={"Get answers to your kahoot quiz"}/>
+                    </FlexWrapper>
+                </ProjectsContent>
 
-                </FlexWrapper>
             </Container>
         </StyledProjects>
     );
@@ -46,6 +48,11 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
     padding: 60px 0 60px;
+    
+    @media ${theme.media.mobile} {
+        max-width: 320px;
+        width: 100%;
+    }
 `
 
 const LinkViewAll = styled(Link)`
@@ -57,6 +64,13 @@ const ProjectsHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 48px;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
 `
 
 const TitleWrapper = styled.div`
@@ -72,11 +86,29 @@ const TitleWrapper = styled.div`
         height: 1px;
         background-color: ${theme.colors.accent};
     }
-    
+
+    @media ${theme.media.mobile} {
+        &::after {
+            width: 120px;
+        }
+    }
+
 `
 
 const IconRect = styled.div`
     position: absolute;
     right: -90px;
     z-index: 1;
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
+`
+
+const ProjectsContent = styled.div`
+    
+    @media ${theme.media.mobile} {
+        display: flex;
+        justify-content: center;
+    }
 `

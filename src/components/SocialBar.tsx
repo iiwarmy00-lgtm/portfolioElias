@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Icon} from "./icon/Icon.tsx";
+import {theme} from "../styles/Theme.ts";
 
 export const SocialBar = () => {
     return (
@@ -34,6 +35,10 @@ const StyledSocialBar = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 16px;
+
+    @media ${theme.media.mobile}{
+        display: none;
+    }
     
     
 `

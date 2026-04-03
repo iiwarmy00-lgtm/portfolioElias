@@ -23,19 +23,19 @@ export const Footer = () => {
                         <SocialList>
                             <SocialMedia>
                                 <SocialLink href="#">
-                                    <Icon iconId={"git"}/>
+                                    <Icon height={"25px"} width={"25px"} viewBox={"0 0 25 25"} iconId={"git"}/>
                                 </SocialLink>
                             </SocialMedia>
 
                             <SocialMedia>
                                 <SocialLink href="#">
-                                    <Icon iconId={"figma"}/>
+                                    <Icon height={"25px"} width={"25px"} viewBox={"0 0 25 25"} iconId={"figma"}/>
                                 </SocialLink>
                             </SocialMedia>
 
                             <SocialMedia>
                                 <SocialLink href="#">
-                                    <Icon iconId={"discord"}/>
+                                    <Icon height={"25px"} width={"25px"} viewBox={"0 0 25 25"} iconId={"discord"}/>
                                 </SocialLink>
                             </SocialMedia>
                         </SocialList>
@@ -52,6 +52,10 @@ const StyledFooter = styled.footer`
     background-color: #282C33;
     border-top: 1px solid ${theme.colors.font};
     padding: 32px 0 24px;
+
+    @media ${theme.media.mobile} {
+        padding: 24px 0 16px;
+    }
 `
 
 const FooterTop = styled.div`
@@ -60,30 +64,55 @@ const FooterTop = styled.div`
     align-items: flex-start;
     gap: 40px;
     margin-bottom: 48px;
+    
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
 `
 
 const FooterLeft = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @media ${theme.media.mobile} {
+        align-items: center;
+    }
 `
 
 const FooterLogoRow = styled.div`
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @media ${theme.media.mobile} {
+        align-items: center;
+    }
 `
 
 const FooterRight = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        gap: 8px;
+    }
 `
 
 const RoleText = styled.p`
     margin: 0;
     color: ${theme.colors.text};
     font-size: 16px;
+
+    @media ${theme.media.mobile} {
+        font-size: 18px;
+    }
 `
 
 const FooterTitle = styled.h3`
@@ -91,6 +120,10 @@ const FooterTitle = styled.h3`
     color: ${theme.colors.text};
     font-size: 24px;
     font-weight: 600;
+
+    @media ${theme.media.mobile} {
+        align-items: center;
+    }
 `
 
 const SocialList = styled.ul`
@@ -98,6 +131,10 @@ const SocialList = styled.ul`
     gap: 8px;
     margin: 0;
     padding: 0;
+
+    @media ${theme.media.mobile} {
+        justify-content: center;
+    }
 `
 
 const SocialMedia = styled.li`
@@ -121,9 +158,17 @@ const Copyright = styled.small`
     text-align: center;
     color: ${theme.colors.font};
     font-size: 14px;
+
+    @media ${theme.media.mobile} {
+        font-size: 12px;
+    }
 `
 
 const Link = styled.a`
     color: ${theme.colors.font};
     font-size: 16px;
+
+    @media ${theme.media.mobile} {
+        font-size: 14px;
+    }
 `

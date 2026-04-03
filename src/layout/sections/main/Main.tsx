@@ -12,7 +12,7 @@ export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={"center"} justify={"space-between"}>
+                <FlexWrapper align={"center"} justify={"space-between"} wrap={"wrap"}>
 
                     <Introduction>
                         <MainTitle>Elias is a <span>web designer</span> and <span>front-end developer</span></MainTitle>
@@ -50,6 +50,10 @@ const StyledMain = styled.section`
     display: flex;
     align-items: center;
     padding: 100px 0 100px;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0 40px;
+    }
 `
 
 const Photo = styled.img`
@@ -63,6 +67,18 @@ const Photo = styled.img`
     object-fit: cover;
     display: block;
     z-index: 3;
+
+    @media ${theme.media.mobile} {
+        position: absolute;
+        bottom: -20%;
+        left: 30%;
+        transform: translateX(-50%) scale(1.5);
+        width: 307px;
+        max-width: none;
+        object-fit: cover;
+        display: block;
+        
+    }
 `
 
 const PhotoWrapper = styled.div`
@@ -70,17 +86,39 @@ const PhotoWrapper = styled.div`
     width: 100%;
     height: 500px;
     overflow: hidden;
+
+    z-index: 0;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: -24px;
+        left: 0;
+        z-index: -1;
+    }
 `
 
 const MainTitle = styled.h1`
     font-weight: 600;
     font-size: 32px;
     line-height: 1.3;
-    margin: 40px 0;
+    margin: 0 0 24px;
+    min-height: 80px;
 
     span {
         color: ${theme.colors.accent};
     }
+
+    @media ${theme.media.mobile} {
+        line-height: 1.3;
+        margin: 0 0 24px;
+        height: 165px;
+        width: 328px;
+    }
+   
 `
 
 const ImageBlock = styled.div`
@@ -89,6 +127,7 @@ const ImageBlock = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
 `
 
 const PhotoCaption = styled.div`
@@ -104,6 +143,16 @@ const PhotoCaption = styled.div`
     gap: 10px;
     background-color: ${theme.colors.primaryBg};
     z-index: 3;
+
+    @media ${theme.media.mobile} {
+        position: absolute;
+        width: 320px;
+        height: 60px;
+        border: 1px solid ${theme.colors.font};
+        display: flex;
+        background-color: ${theme.colors.primaryBg};
+        
+    }
 `
 
 const CaptionText = styled.span`
@@ -139,6 +188,10 @@ const ReadMoreLink = styled(Link)`
         background-color: ${theme.colors.accent};
         color: ${theme.colors.primaryBg};
     }
+
+    @media ${theme.media.mobile} {
+        display: none;
+    }
 `
 
 const TextAboutAuthor = styled.div`
@@ -147,6 +200,16 @@ const TextAboutAuthor = styled.div`
     line-height: 1.6;
     margin: 0 0 24px;
     min-height: 80px;
+
+    @media ${theme.media.mobile} {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 24px;
+        height: 42px;
+        width: 328px;
+        color: ${theme.colors.font};
+    }
 `
 
 const Introduction = styled.div`
@@ -155,6 +218,7 @@ const Introduction = styled.div`
     top: 200px;
     left: 171px;
     text-align: left;
+    padding: 100px 0 0;
 `
 
 const PurpleLogo = styled.div`
@@ -175,5 +239,11 @@ const Dots = styled.div`
     top: 320px;
     right: 60px;
     z-index: 6;
+
+    @media ${theme.media.mobile} {
+        position: absolute;
+        top: 320px;
+        right: 150px;
+    }
 `
 

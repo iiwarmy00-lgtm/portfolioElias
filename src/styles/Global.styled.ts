@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html,
+    body,
+    
+
     body {
         margin: 0;
         min-width: 320px;
@@ -17,7 +21,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Fira Code", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: ${theme.colors.text};
         line-height: 1.2;
+        background-color: ${theme.colors.primaryBg};
+        overflow-x: hidden;
     }
+
+    
 
     a {
         text-decoration: none;
@@ -35,8 +43,9 @@ export const GlobalStyle = createGlobalStyle`
         background: unset;
         border: none;
     }
-    
+
     section {
+        width: 100%;
         background-color: ${theme.colors.primaryBg};
     }
 `

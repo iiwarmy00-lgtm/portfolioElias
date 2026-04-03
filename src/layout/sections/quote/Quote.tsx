@@ -12,7 +12,6 @@ export const Quote = () => {
                 </IconRect>
                 <QuoteWrapper>
 
-
                     <QuoteTextBlock>
                         <QuoteMarkLeft>"</QuoteMarkLeft>
                         <QuoteText>With great power comes great electricity bill</QuoteText>
@@ -30,13 +29,17 @@ export const Quote = () => {
 
 const StyledQuote = styled.section`
     padding: 40px 0 40px;
+    
 `
 
 const IconRect = styled.div`
     position: absolute;
     right: -10px;
     z-index: 1;
-    
+
+    @media ${theme.media.mobile}{
+        display: none;
+    }
 `
 
 const QuoteWrapper = styled.div`
@@ -44,6 +47,10 @@ const QuoteWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    @media ${theme.media.mobile} {
+        align-items: flex-start;
+    }
 `
 
 const QuoteTextBlock = styled.div`
@@ -53,6 +60,11 @@ const QuoteTextBlock = styled.div`
     max-width: 720px;
     width: 100%;
     background-color: ${theme.colors.primaryBg};
+
+    @media ${theme.media.mobile} {
+        padding: 16px;
+        max-width: 328px;
+    }
 `
 
 const QuoteAuthorBlock = styled.div`
@@ -63,6 +75,17 @@ const QuoteAuthorBlock = styled.div`
     padding: 16px 16px;
     background-color: ${theme.colors.primaryBg};
     right: 165px;
+
+    @media ${theme.media.mobile} {
+        margin-right: 0;
+        align-self: flex-end;
+        position: relative;
+        border: 1px solid ${theme.colors.font};
+        border-top: none;
+        padding: 16px 16px;
+        background-color: ${theme.colors.primaryBg};
+        right: 3px;
+    }
 `
 
 const QuoteMarkLeft = styled.div`
@@ -92,9 +115,17 @@ const QuoteText = styled.p`
     line-height: 1.4;
     color: ${theme.colors.text};
     margin: 0;
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+    }
 `
 
 const QuoteAuthor = styled.cite`
     font-size: 24px;
     color: ${theme.colors.text};
+
+    @media ${theme.media.mobile} {
+        font-size: 16px;
+    }
 `

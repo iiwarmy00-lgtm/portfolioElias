@@ -25,6 +25,10 @@ const StyledMenu = styled.nav`
         align-items: center;
         justify-content: space-between;
     }
+    
+    @media  ${theme.media.tablet} {
+        display: none;
+    }
 `
 
 const ListItem = styled.li`
